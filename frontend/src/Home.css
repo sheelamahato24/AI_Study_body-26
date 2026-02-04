@@ -1,0 +1,103 @@
+.home-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff, #f5f3ff);
+  background-size: 200% 200%;
+  animation: bgMove 12s ease infinite;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* animated background */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass card */
+.demo {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 42px 50px;
+  border-radius: 20px;
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: floatCard 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* subtle floating effect */
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* on hover card */
+.demo:hover {
+  transform: translateY(-12px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.demo h1 {
+  font-size: 2.3rem;
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+/* Text */
+.demo p {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.demo p span {
+  color: #6d28d9;
+  font-weight: 700;
+}
+
+/* Button */
+.butun {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover glow */
+.butun:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.7);
+}
+
+/* Button click */
+.butun:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .demo {
+    padding: 32px 22px;
+  }
+
+  .demo h1 {
+    font-size: 1.9rem;
+  }
+}
